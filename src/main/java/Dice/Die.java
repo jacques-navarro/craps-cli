@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Die {
 
-    private DieValue value;
+    private int value;
     private Random random;
 
     public Die() {
@@ -12,21 +12,13 @@ public class Die {
         roll();
     }
 
-    public DieValue getValue() {
+    public int getValue() {
         return value;
     }
 
-    public DieValue roll() {
-        int random = getRandom();
-        value = switch (random) {
-            case 1 -> DieValue.ONE;
-            case 2 -> DieValue.TWO;
-            case 3 -> DieValue.THREE;
-            case 4 -> DieValue.FOUR;
-            case 5 -> DieValue.FIVE;
-            default -> DieValue.SIX;
-        };
-        return value;
+    public int roll() {
+        value = getRandom();
+        return getValue();
     }
 
     public int getRandom() {
@@ -35,7 +27,7 @@ public class Die {
 
     @Override
     public String toString() {
-        return getValue().toString();
+        return String.valueOf(value);
     }
 
 }
