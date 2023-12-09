@@ -24,7 +24,6 @@ public class Dice {
     }
 
     public int getSum() {
-        rollDice();
         return getDie1Value() + getDie2Value();
     }
 
