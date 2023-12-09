@@ -9,6 +9,8 @@ public class Game {
     private Scanner scanner;
     private Dice dice;
     private GameState gameState;
+    private int roll;
+    private int goal;
 
     public Game(Scanner scanner) {
         this.scanner = scanner;
@@ -29,10 +31,62 @@ public class Game {
 
             if (menuChoice == 1) {
                 while (true) {
-                    System.out.println("1 - Roll Dice");
+                    // START -> GET_GOAL
+                    gameState = gameState.nextState(0, 0);
+                    System.out.println("\n1 - Roll Dice");
                     System.out.println("2 - Quit");
 
+                    System.out.print("Enter Choice: ");
                     int gameChoice = Integer.valueOf(scanner.nextLine());
+
+                    if (gameChoice == 1) {
+                        rollDice();
+
+                        if (gameState.equals(GameState.WIN)) {
+                            System.out.println("You win!!\n");
+                        }
+
+                        if (gameState.equals(GameState.LOSE)) {
+                            System.out.println("You Lose!!\n");
+                        }
+
+                        if (gameState.equals(GameState.SEEK_GOAL)) {
+                            setGoal();
+                        }
+
+                        while (gameState.equals(GameState.SEEK_GOAL)) {
+                            rollDice();
+
+                            if (gameState.equals(GameState.WIN)) {
+                                System.out.println("You win!!\n");
+                                break;
+                            }
+
+                            if (gameState.equals(GameState.LOSE)) {
+                                System.out.println("You Lose!!\n");
+                                break;
+                            }
+                            if (gameState.equals(GameState.SEEK_GOAL)) {
+                                System.out.println("Roll again.");
+                            }
+                        }
+                        // WIN | LOSE -> END
+                        gameState = gameState.nextState(roll, 0);
+                        System.out.println("Would you like to play again?");
+                        System.out.println("1 - Yes");
+                        System.out.println("2 - Go to Main Menu");
+                        System.out.print("Enter Choice: ");
+                        gameChoice = Integer.valueOf(scanner.nextLine());
+
+                        if (gameChoice == 1) {
+                            // END -> START
+                            gameState = gameState.nextState(0, 0);
+                            continue;
+                        }
+                        if (gameChoice == 2) {
+                            break;
+                        }
+                    }
 
                     if (gameChoice == 2) {
                         break;
@@ -50,6 +104,19 @@ public class Game {
                 break;
             }
         }
+    }
+
+    private void rollDice() {
+        dice.rollDice();
+        roll = dice.getSum();
+        // GET_GOAL -> SEEK_GOAL
+        gameState = gameState.nextState(roll, goal);
+        System.out.printf("\nYou rolled %d.\n", roll);
+    }
+
+    private void setGoal() {
+        goal = roll;
+        System.out.printf("The goal is %d.\n", goal);
     }
 
 }
