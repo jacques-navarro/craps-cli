@@ -72,9 +72,11 @@ public class Game {
                                 break;
                             }
                             if (gameState.equals(GameState.SEEK_GOAL)) {
-                                System.out.println("Roll again.");
+                                System.out.println("Press 1 to roll again");
+                                int one = Integer.valueOf(scanner.nextLine());
                             }
                         }
+
                         // WIN | LOSE -> END
                         gameState = gameState.nextState(roll, 0);
                         System.out.println("Would you like to play again?");
