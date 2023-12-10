@@ -19,15 +19,20 @@ public class Game {
     }
 
     public void play() {
-        System.out.println("Craps\n");
+        System.out.println("Craps");
         while (true) {
-            System.out.println("Select an Option");
+            System.out.println("\nSelect an Option");
             System.out.println("1 - Play");
             System.out.println("2 - See Rules");
             System.out.println("3 - Exit");
             System.out.print("Enter Choice: ");
 
             int menuChoice = Integer.valueOf(scanner.nextLine());
+
+            // Ensure game starts with state set to START
+            // required if a game is started after returning
+            // to the main menu
+            gameState = GameState.START;
 
             if (menuChoice == 1) {
                 while (true) {
