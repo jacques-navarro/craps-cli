@@ -87,4 +87,4 @@ You win!!
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/jacques-navarro/craps-cli/blob/main/LICENSE) file for details.
