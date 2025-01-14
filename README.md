@@ -99,8 +99,6 @@ You win!!
 
 ## Deploy
 
-### Docker Image
-
 These instructions will cover usage information and for the docker container
 
 ### Prerequisities
@@ -110,6 +108,8 @@ In order to run this container you'll need docker installed.
 * [Windows](https://docs.docker.com/windows/started)
 * [OS X](https://docs.docker.com/mac/started/)
 * [Linux](https://docs.docker.com/linux/started/)
+
+### Docker Image
 
 1. Pull image from Docker Hub
 ```
@@ -131,6 +131,10 @@ docker images
 ```
 docker run -it jacquesnavarro/craps-cli
 ```
+
+### Docker Hub Repo
+
+[jacquesnavarro/craps-cli](https://hub.docker.com/r/jacquesnavarro/craps-cli)
 
 ## License
 
