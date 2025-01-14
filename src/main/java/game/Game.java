@@ -103,6 +103,7 @@ public class Game {
             }
 
             if (menuChoice == 2) {
+                displayRules();
                 continue;
             }
 
@@ -111,6 +112,16 @@ public class Game {
                 break;
             }
         }
+    }
+
+    private static void displayRules() {
+        System.out.println("\nAfter starting the game the dice are immediately rolled.\n");
+        System.out.println("If a 7 or 11 is rolled, you win immediately. ");
+        System.out.println("If a 2, 3 or 12 are rolled instead, then you lose.");
+        System.out.println("If any other number is rolled, 4, 5, 6, 8, 9 or 10, it becomes the goal.");
+        System.out.println("\nYou must roll this number again, before rolling a 7 seven to win the game.");
+        System.out.println("If a 7 is rolled before the goal, you lose.");
+        System.out.println("If neither the goal nor a 7 are rolled, the dice are rolled again.");
     }
 
     private void rollDice() {
