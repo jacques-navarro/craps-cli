@@ -84,3 +84,7 @@ You must roll this number again, before rolling a 7 to win the game.
 You rolled 10.
 You win!!
 ```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
