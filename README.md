@@ -16,6 +16,18 @@
 
 A basic implementation of the [dice rolling game](https://en.wikipedia.org/wiki/Craps).
 
+## Managing Game State
+
+The state of the game is managed using an [Enum based State Machine](https://www.youtube.com/watch?v=-ZP2Xm-mY4E).
+
+The [State Machine](https://github.com/jacques-navarro/craps-cli/blob/main/src/main/java/game/GameState.java) has six possible states:
+1. START
+2. GET_GOAL
+3. SEEK_GOAL
+4. WIN
+5. LOSE
+6. END
+
 ## Rules
 
 ### Roll out
