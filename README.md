@@ -85,6 +85,41 @@ You rolled 10.
 You win!!
 ```
 
+## Deploy
+
+### Docker Image
+
+These instructions will cover usage information and for the docker container
+
+### Prerequisities
+
+In order to run this container you'll need docker installed.
+
+* [Windows](https://docs.docker.com/windows/started)
+* [OS X](https://docs.docker.com/mac/started/)
+* [Linux](https://docs.docker.com/linux/started/)
+
+1. Pull image from Docker Hub
+```
+docker pull jacquesnavarro/craps-cli
+```
+
+2. Verify image was pull successfully
+
+```declarative
+docker images
+```
+
+|        REPOSITORY        |   TAG  |   IMAGE ID   | CREATED           |  SIZE |
+|:------------------------:|:------:|:------------:|-------------------|:-----:|
+| jacquesnavarro/craps-cli | latest | 36b35702a29b | About an hour ago | 420MB |
+
+3. Run container
+
+```
+docker run -it jacquesnavarro/craps-cli
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/jacques-navarro/craps-cli/blob/main/LICENSE) file for details.
